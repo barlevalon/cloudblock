@@ -9,10 +9,10 @@ mgmt_cidr = "a.b.c.d/32"
 kms_manager = "some_username"
 
 # The number of wireguard peer configurations to generate / store - 1 per device
-wireguard_peers = 20
+wireguard_peers = 5
 
 # dns over https provider, one of adguard applied-privacy cloudflare google hurricane-electric libre-dns opendns pi-dns quad9-recommended - see https://github.com/curl/curl/wiki/DNS-over-HTTPS
-doh_provider = "opendns"
+doh_provider = "cloudflare-security"
 
 # Generate wireguard client configurations to route only "dns" traffic through VPN, or:
 # "peers" - dns + other connected peers
@@ -29,7 +29,7 @@ dns_novpn = 1
 client_cidrs = []
 
 ## UNCOMMON ##
-aws_region = "us-east-1"
+aws_region = "il-central-1"
 
 # SUGGEST: ARM-based - these are much lower cost, though not all regions support ARM.
 # To check your region, replace us-east-1 with your region and run the below command.
@@ -42,7 +42,7 @@ instance_type = "t4g.micro"
 # AWS_REGION=us-east-1 && ~/.local/bin/aws ec2 describe-images --region $AWS_REGION --owners 099720109477 --filters 'Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-*' 'Name=state,Values=available' --query 'sort_by(Images, &CreationDate)[-1].Name'
 # For x86_64 (non-ARM):
 # AWS_REGION=us-east-1 && ~/.local/bin/aws ec2 describe-images --region $AWS_REGION --owners 099720109477 --filters 'Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*' 'Name=state,Values=available' --query 'sort_by(Images, &CreationDate)[-1].Name'
-vendor_ami_name_string    = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20221018"
+vendor_ami_name_string    = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20240411"
 vendor_ami_account_number = "099720109477"
 
 ## VERY UNCOMMON ##
